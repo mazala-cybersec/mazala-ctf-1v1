@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge: Emoji Hell</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px #00ff41; }
+        .subtitle { color: #888; margin-bottom: 2rem; font-size: 0.9rem; }
+        .files {
+            border: 1px solid #00ff41;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            min-width: 400px;
+        }
+        .files h2 { font-size: 1rem; color: #ff6600; margin-bottom: 1rem; }
+        .file-link {
+            display: block;
+            color: #00ff41;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 0.95rem;
+        }
+        .file-link:last-child { border-bottom: none; }
+        .file-link:hover { color: #fff; text-shadow: 0 0 10px #00ff41; }
+        .file-link .desc { color: #666; font-size: 0.8rem; margin-left: 1rem; }
+        .hint { color: #555; font-size: 0.8rem; margin-top: 1.5rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>EMOJI HELL</h1>
+    <p class="subtitle">a developer wrote a flag checker in the strangest way possible</p>
+    <div class="files">
+        <h2>DOWNLOAD FILES:</h2>
+        <a class="file-link" href="check" download>check <span class="desc">- compiled binary (ELF x86-64)</span></a>
+        <a class="file-link" href="check.c" download>check.c <span class="desc">- source code</span></a>
+    </div>
+    <p class="hint">usage: ./check mazala{...}</p>
+</body>
+</html>

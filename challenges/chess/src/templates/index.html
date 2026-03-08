@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MazalaChess - Can You Beat The Bear?</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MazalaChess</h1>
+            <p class="subtitle">Beat the bear. Get the flag. Simple as that... right?</p>
+        </header>
+
+        <div class="game-area">
+            <div class="board-container">
+                <div id="board"></div>
+            </div>
+
+            <div class="side-panel">
+                <div class="status-box">
+                    <div id="status" class="status">Click "New Game" to start</div>
+                    <div id="turn-indicator" class="turn-indicator"></div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-row">
+                        <span class="label">Moves</span>
+                        <span id="move-count" class="value">0</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Status</span>
+                        <span id="game-status" class="value">Waiting</span>
+                    </div>
+                </div>
+
+                <div class="move-history">
+                    <h3>Move History</h3>
+                    <div id="moves-list" class="moves-list"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="new-game-btn" class="btn btn-primary">New Game</button>
+                    <button id="resign-btn" class="btn btn-danger" disabled>Resign</button>
+                </div>
+
+                <div id="flag-display" class="flag-display hidden"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>MazalaChess v1.0 — "The bear never loses" — <em>or does it?</em></p>
+        </footer>
+    </div>
+
+    <div id="promotion-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Promote pawn to:</h3>
+            <div class="promo-options">
+                <button onclick="selectPromotion('q')">♛ Queen</button>
+                <button onclick="selectPromotion('r')">♜ Rook</button>
+                <button onclick="selectPromotion('b')">♝ Bishop</button>
+                <button onclick="selectPromotion('n')">♞ Knight</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/chess.min.js"></script>
+    <script src="/static/js/game.js"></script>
+</body>
+</html>

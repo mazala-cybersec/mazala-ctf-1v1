@@ -1,0 +1,152 @@
+services:
+  # Challenge 1: Git Leak - exposed .git history
+  git-leak:
+    build: ./challenges/git-leak
+    ports:
+      - "3001:5000"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    read_only: true
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 2: Emoji Hell - reversing emoji-obfuscated C
+  emoji-hell:
+    build: ./challenges/emoji-hell
+    ports:
+      - "3002:5000"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    read_only: true
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 3: Speed Clicker 3000 - JS click game bypass
+  speed-clicker:
+    build: ./challenges/speed-clicker
+    ports:
+      - "3003:5000"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    read_only: true
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 4: MazalaChess - client-side FEN trust vuln
+  chess:
+    build: ./challenges/chess/src
+    ports:
+      - "3004:5000"
+    environment:
+      - FLAG=mazala{n3v3r_tru5t_th3_cl13nt_f3n}
+      - STOCKFISH_PATH=/usr/games/stockfish
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 64
+    tmpfs:
+      - /tmp
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 5: ShopZone - SQL injection in product search
+  sqli:
+    build: ./challenges/sqli
+    ports:
+      - "3005:5000"
+    environment:
+      - FLAG=mazala{sq1i_g0t_u}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 6: CardCraft - Server-side template injection
+  ssti:
+    build: ./challenges/ssti
+    ports:
+      - "3006:5000"
+    environment:
+      - FLAG=mazala{sst1_pwn3d}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 128
+    tmpfs:
+      - /tmp
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 7: QuickBite - JWT alg:none token forgery
+  jwt:
+    build: ./challenges/jwt
+    ports:
+      - "3007:5000"
+    environment:
+      - FLAG=mazala{jwt_4lg_n0n3}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    dns: []
+    networks:
+      - challenges
+
+  # Challenge 8: FreightFlow - XML external entity injection
+  xxe:
+    build: ./challenges/xxe
+    ports:
+      - "3008:5000"
+    environment:
+      - FLAG=mazala{xxe_r34d_4ny_f1le}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 128
+    tmpfs:
+      - /tmp
+    dns: []
+    networks:
+      - challenges
+
+networks:
+  challenges:
+    driver: bridge

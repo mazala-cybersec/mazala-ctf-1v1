@@ -1,0 +1,9 @@
+version: '3'
+services:
+  chess:
+    build: ./src
+    ports:
+      - "5003:5000"
+    environment:
+      - FLAG=mazala{n3v3r_tru5t_th3_cl13nt_f3n}
+      - STOCKFISH_PATH=/usr/games/stockfish

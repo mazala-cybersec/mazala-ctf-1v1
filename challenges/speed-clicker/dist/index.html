@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPEED CLICKER 3000</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px #00ff41;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .game-box {
+            border: 2px solid #00ff41;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 400px;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        .stats span { color: #ff6600; }
+        #clickBtn {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #00ff41;
+            background: transparent;
+            color: #00ff41;
+            font-size: 1.5rem;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            transition: all 0.1s;
+            margin: 1rem auto;
+            display: block;
+        }
+        #clickBtn:hover { background: rgba(0, 255, 65, 0.1); }
+        #clickBtn:active {
+            transform: scale(0.95);
+            background: rgba(0, 255, 65, 0.2);
+        }
+        #clickBtn.disabled {
+            border-color: #333;
+            color: #333;
+            cursor: not-allowed;
+        }
+        #startBtn {
+            background: #00ff41;
+            color: #0a0a0a;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        #startBtn:hover { background: #00cc33; }
+        #result {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            min-height: 2rem;
+            color: #ff3333;
+        }
+        #result.win { color: #00ff41; text-shadow: 0 0 10px #00ff41; }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #00ff41;
+            width: 0%;
+            transition: width 0.05s;
+        }
+        .rules {
+            color: #555;
+            font-size: 0.75rem;
+            margin-top: 2rem;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>SPEED CLICKER 3000</h1>
+    <p class="subtitle">can you click fast enough?</p>
+
+    <div class="game-box">
+        <div class="stats">
+            <div>CLICKS: <span id="scoreDisplay">0</span> / <span>1000</span></div>
+            <div>TIME: <span id="timerDisplay">3.00</span>s</div>
+        </div>
+
+        <button id="clickBtn" class="disabled">WAIT</button>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <button id="startBtn">START GAME</button>
+
+        <div id="result"></div>
+    </div>
+
+    <p class="rules">reach 1000 clicks in 3 seconds to reveal the flag. good luck.</p>
+
+    <script src="game.js"></script>
+</body>
+</html>
