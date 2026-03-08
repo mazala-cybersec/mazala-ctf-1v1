@@ -30,16 +30,16 @@ Designed for live on-stage competitions with [mazala-ctf-bracket](https://github
 
 ## Challenges
 
-| # | Name | Category | Difficulty | Port | Description |
-|---|---|---|---|---|---|
-| 1 | **Git Leak** | Web / Crypto | Medium | 3001 | Exposed `.git` directory with encrypted flag in commit history |
-| 2 | **Emoji Hell** | Reversing | Medium | 3002 | C flag checker obfuscated with emoji `#define` macros |
-| 3 | **Speed Clicker 3000** | Web / JS | Easy | 3003 | Impossible clicking game — flag hidden in JS source |
-| 4 | **MazalaChess** | Web | Hard | 3004 | Beat Stockfish AI — or find the client-side trust vulnerability |
-| 5 | **ShopZone** | Web (SQLi) | Easy | 3005 | SQL injection in product search |
-| 6 | **CardCraft** | Web (SSTI) | Medium | 3006 | Server-side template injection in greeting card maker |
-| 7 | **QuickBite** | Web (JWT) | Medium | 3007 | JWT `alg:none` token forgery in food ordering app |
-| 8 | **FreightFlow** | Web (XXE) | Medium | 3008 | XML external entity injection in invoice upload |
+| # | Name | Category | Difficulty | Port | Author | Description |
+|---|---|---|---|---|---|---|
+| 1 | **Git Leak** | Web / Crypto | Medium | 3001 | [@ByamB4](https://github.com/ByamB4) | Exposed `.git` directory with encrypted flag in commit history |
+| 2 | **Emoji Hell** | Reversing | Medium | 3002 | [@ByamB4](https://github.com/ByamB4) | C flag checker obfuscated with emoji `#define` macros |
+| 3 | **Speed Clicker 3000** | Web / JS | Easy | 3003 | [@ByamB4](https://github.com/ByamB4) | Impossible clicking game — flag hidden in JS source |
+| 4 | **MazalaChess** | Web | Hard | 3004 | [@ByamB4](https://github.com/ByamB4) | Beat Stockfish AI — or find the client-side trust vulnerability |
+| 5 | **ShopZone** | Web (SQLi) | Easy | 3005 | [@enhbold](https://github.com/enhbold) | SQL injection in product search |
+| 6 | **CardCraft** | Web (SSTI) | Medium | 3006 | [@enhbold](https://github.com/enhbold) | Server-side template injection in greeting card maker |
+| 7 | **QuickBite** | Web (JWT) | Medium | 3007 | [@enhbold](https://github.com/enhbold) | JWT `alg:none` token forgery in food ordering app |
+| 8 | **FreightFlow** | Web (XXE) | Medium | 3008 | [@enhbold](https://github.com/enhbold) | XML external entity injection in invoice upload |
 
 ---
 
